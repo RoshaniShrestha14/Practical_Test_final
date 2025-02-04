@@ -1,13 +1,13 @@
 <?php
 session_start();
-// Check if the user is logged in
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
 
-require 'database.php'; // Include your database connection file
-require 'partial/header.php'; // Include your header file
+require 'database.php'; 
+require 'partial/header.php'; 
 require_once 'partial/nav.php';
 ?>
 
@@ -38,11 +38,11 @@ require_once 'partial/nav.php';
                 $i = 1; // Initialize the counter variable for the serial number
                 foreach ($users as $user): ?>
                     <tr>
-                        <td><?= $i++; ?></td> <!-- Increment the counter variable -->
-                        <td><?= $user['first_name']; ?></td> <!-- Display first name -->
-                        <td><?= $user['last_name']; ?></td> <!-- Display last name -->
-                        <td><?= $user['email']; ?></td> <!-- Display email -->
-                        <td><?= $user['phone_number']; ?></td> <!-- Display phone number -->
+                        <td><?= $i++; ?></td> 
+                        <td><?= $user['first_name']; ?></td> 
+                        <td><?= $user['last_name']; ?></td> 
+                        <td><?= $user['email']; ?></td> 
+                        <td><?= $user['phone_number']; ?></td> 
                         <td>
                             <?php if ($user['profile_photo']): ?>
                                 <img src="<?= $user['profile_photo']; ?>" alt="Profile Photo" width="50" height="50" class="img-thumbnail">

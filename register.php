@@ -1,11 +1,10 @@
 <?php
-// **TASK FOR YOU**: After you've gone through the session management, implement a logic to prevent logged in users from visiting this page. If a user is already logged in, redirect them to the index.php page.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Include database connection file
     require_once 'database.php';
 
     // Get form data
-    $name = trim($_POST['name']); // Trim function - An in-built function that removes extra spaces from beginning and end of the string
+    $name = trim($_POST['name']); 
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $confirm_password = trim($_POST['confirm_password']);
@@ -13,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate form data
     if (empty($name) || empty($email) || empty($password) || empty($confirm_password)) {
         $error = "All fields are required.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) { // filter_var - An in-built function that validates the email address, FILTER_VALIDATE_EMAIL - A predefined constant that checks if the email address is in the correct format
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  
         $error = "Invalid email format.";
     } elseif ($password !== $confirm_password) { // Check if password and confirm password match
         $error = "Passwords do not match.";
@@ -27,14 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Insert new user into database
             $sql = "INSERT INTO users1 (name, email, password) VALUES (?, ?, ?)";
-            $hashed_password = sha1(md5($password)); // Hash the password using both sha1 and md5 functions. You can only use one of them if you want.
+            $hashed_password = sha1(md5($password)); 
             $returnId = $conn->create($sql, [$name, $email, $hashed_password]);
-            if ($returnId) { // This simply means if the user is successfully registered
+            if ($returnId) { 
                 header("Location: login.php");
                 exit();
             } else {
                 $error = "Something went wrong. Please try again later.";
-                // **TASK FOR YOU**: Display the error message on an alert box on the page as we did in the login.php file.
+            
             }
         }
     }
@@ -49,17 +48,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom, #c9e9d2, #789dbc);
+            font-family: 'Arial', sans-serif;
         }
         .register-container {
             margin-top: 50px;
         }
         .register-form {
-            background: #fff;
+            background: #ffffff;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
+        .register-form h2 {
+            font-weight: bold;
+            color: #789dbc;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #555555;
+        }
+        .form-control {
+            border: 1px solid #789dbc;
+            border-radius: 8px;
+        }
+        .form-control:focus {
+            border-color: #c9e9d2;
+            box-shadow: 0 0 5px rgba(201, 233, 210, 0.8);
+        }
+        .btn-primary {
+            background: #789dbc;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #56708f;
+        }
+        .text-center a {
+            color: #789dbc;
+            font-weight: bold;
+        }
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+    </style>
     </style>
 </head>
 <body>

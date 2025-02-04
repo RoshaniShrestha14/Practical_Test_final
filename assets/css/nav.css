@@ -1,28 +1,33 @@
-/* General Styles */
 body {
-    background-color: #f4f6f9;
-    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #f4f6f9); /* Soft gradient background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 /* Navbar Styles */
 .navbar {
-    background: linear-gradient(90deg, #0d6efd, #6610f2); /* Blue to Purple */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    padding: 10px 20px;
+    background: linear-gradient(90deg, #4a148c, #7e57c2); /* Vibrant purple gradient */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 10px 20px; /* Reduced padding */
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand {
-    font-weight: bold;
-    font-size: 1.6rem;
+    font-weight: 600;
+    font-size: 1.5rem; /* Slightly smaller font size */
     letter-spacing: 1px;
-    color: #ffffff !important;
-    transition: color 0.3s ease;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
 }
 
 .navbar-brand:hover {
-    color: #17a2b8 !important;
+    color: #ffcc80;
 }
 
 /* Navbar Links */
@@ -33,93 +38,92 @@ body {
 }
 
 .nav-item {
-    margin: 0 15px;
+    margin: 0 10px; /* Reduced margin */
 }
 
 .nav-link {
-    color: #dcdcdc !important;
-    font-size: 1rem;
+    color: #e1e1e1;
+    font-size: 1rem; /* Reduced font size */
+    text-transform: uppercase;
     text-decoration: none;
-    padding: 10px 0;
+    padding: 6px 12px; /* Reduced padding */
+    border-radius: 6px; /* Smaller border radius */
     transition: all 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-    color: #17a2b8 !important;
-    transform: scale(1.05);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
 /* Active Link Styling */
 .nav-item.active .nav-link {
-    color: #17a2b8 !important;
-    font-weight: bold;
-    border-bottom: 2px solid #17a2b8;
+    color: #ffcc80;
+    font-weight: 600;
+    border-bottom: 2px solid #ffcc80;
 }
 
 /* Button Styling */
-.btn-outline-light {
-    border-radius: 20px;
-    padding: 5px 15px;
+.btn-outline-light, .btn-outline-primary {
+    border-radius: 30px; /* Smaller button radius */
+    padding: 8px 18px; /* Reduced padding */
+    font-size: 0.9rem; /* Reduced font size */
+    font-weight: 500;
     transition: all 0.3s ease-in-out;
+    border-width: 2px;
 }
 
-.btn-outline-light:hover {
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-    color: white !important;
-}
-
-.btn-outline-primary {
-    border-radius: 20px;
-    padding: 5px 15px;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-outline-primary:hover {
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-    color: white !important;
+.btn-outline-light:hover, .btn-outline-primary:hover {
+    background: #ffcc80;
+    border-color: #ffcc80;
+    color: #4a148c;
 }
 
 /* Navbar Toggler */
 .navbar-toggler {
     border: none;
-    background-color: #17a2b8;
+    background: #ffcc80;
+    border-radius: 50%;
+    padding: 5px; /* Smaller toggler size */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-toggler-icon {
     background-color: #ffffff;
+    width: 18px; /* Smaller icon */
+    height: 2px;
+    display: block;
+    margin: 3px auto;
+    border-radius: 1px;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar-nav {
-        text-align: center;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
 
     .nav-link {
-        padding: 10px 0;
-    }
-
-    .navbar-toggler {
-        display: block;
+        padding: 10px 20px; /* Slightly reduced padding */
     }
 
     .navbar-collapse {
-        background: #ffffff;
-        padding: 10px;
-        border-radius: 5px;
+        background: #4a148c;
+        padding: 10px; /* Reduced padding */
+        border-radius: 8px;
     }
 
     .navbar-collapse .nav-link {
-        color: #17a2b8 !important;
-        padding: 8px 0;
+        color: #ffcc80;
+        font-weight: 500;
+        text-transform: uppercase;
     }
 
     .navbar-collapse .nav-item.active .nav-link {
-        color: #ffffff !important;
-        font-weight: bold;
+        color: #ffffff;
         border-bottom: 2px solid #ffffff;
     }
 }

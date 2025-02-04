@@ -1,21 +1,12 @@
-# basic-php-crud
-This repo contains the basic CRUD operation with basic authentication for learning purpose.
+# Basic Crud with authentication:
+This project contain basic CRUD operation of Profile with authentication.
+ First of all, database is created and connected using the MySql
 
-`basic-crud` - Contains only the CRUD operation without any Authentication.
+ Database stores all the data from the login, register and profile creation, update page where the data like name, email, password is kept in users1 table for login and register purpose and the data like first_name, last_name, email, phone number, profile picture is stored in users table.
 
-`basic-crud-auth` - Contains the CRUD operation with basic Authentication.
+ The application includes different functions like login, register, logout. At first, user needs to register providing essential credentials required  and they will be logged in into the system where user can create, update and delete the profile. 
 
-## Learning Roadmap
-### `basic-crud` Branch
-1. First of all, start by importing the database file `basic_crud.sql` in your database.
-2. Then, review the database connection logic in `database.php`.
-3. Review the `index.php` file to understand the folder structure and CRUD operation.
-4. Work your way through the `create-product.php`, `edit-product.php`, and `delete-product.php` files.
+ Navigation bar of this application provide seamless navigation to other festures of the application. The css is used in this applicaction inorder to provide visually appealing application.
 
-### `basic-crud-auth` Branch
-1. First, go through the registration logic in `register.php`.
-2. Then, review the login logic in `login.php`.
-3. Again go through step 1 and 2 as there are lots of logic and codes to understand.
-4. Go through the `index.php` file to see how the sessions can be implemented in the application.
-5. Visit the `logout.php` file to understand how to destroy the session.
-6. Work your way through the `create-product.php`, `edit-product.php`, and `delete-product.php` files to understand how the authentication and session data can be implemented in different pages.
+ 
+
